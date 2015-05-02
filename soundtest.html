@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title></title>
+    <script src="sound.js"></script>
+    <script>
+    //yeah yeah, inline js, fugly. dit deel is just testin'
+    Sound.lib.add('audio/01.mp3', 'heist');
+
+    Sound.que.add('heist');
+
+    document.addEventListener('DOMContentLoaded', function(){
+      Sound.visualizer.createAnalyser('heist', Sound.visualizer.createOutput);
+
+      Sound.lib.items['heist'].visualizer.width = 1024;
+      Sound.lib.items['heist'].visualizer.height = 255;
+      Sound.lib.items['heist'].visualizer.visualization = Sound.visualizer.lib.line;
+      Sound.lib.items['heist'].visualizer.appendTo(document.body);
+      Sound.lib.items['heist'].visualizer.render();
+      Sound.lib.items['heist'].play();
+    })
+
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
